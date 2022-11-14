@@ -18,7 +18,7 @@ const createElement = (tag, options) => {
 
 
 const renderForm = (actionUrl, manifest, hideManifest) => {
-  const form = createElement(el, { method: "post", action: actionUrl });
+  const form = createElement("form", { method: "post", action: actionUrl });
   form.appendChild(createElement("input", { type: hideManifest ? "hidden" : "text", name: "manifest", value: JSON.stringify(manifest) }));
   form.appendChild(createElement("input", { type: "submit" }));
   return form;
