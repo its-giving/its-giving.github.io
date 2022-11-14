@@ -18,8 +18,8 @@ const getUserAppUrl = () => `https://github.com/settings/apps/new`;
 const getAppUrl = organization => organization ? getOrgAppUrl(organization) : getUserAppUrl();
 
 /* DOM UTILS */
-const createElement = (el, options) => {
-  const el = document.createElement(el);
+const createElement = (tag, options) => {
+  const el = document.createElement(tag);
   for (const k of options) {
     el.setAttribute(k, options[k]);
   }
