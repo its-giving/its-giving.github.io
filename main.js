@@ -1,13 +1,3 @@
-const APP_MANIFEST = {
-    name: "PR commenter - build output",
-    description: "Adds inline code comments based on build output",
-    url: 'https://github.com/eliblock/less-advanced-security',
-    hook_attributes: { url: 'https://github.com/<your_user>/dev/null' },
-    redirect_url: "",
-    public: false,
-    default_permissions: { "checks": "write", "pulls": "read" }
-};
-
 /* QUERY PARAMS */
 const queryParam = (key) => new URLSearchParams(document.location.search).get(key);
 const queryParams = (...keys) => keys.map(k => ({[k]: queryParam(k)})).reduce((acc, e) => ({...acc, ...e}));
@@ -30,7 +20,7 @@ const createElement = (tag, options) => {
 const renderForm = (actionUrl, manifest, hideManifest) => {
   const form = createElement(el, { method: "post", action: actionUrl });
   form.appendChild(createElement("input", { type: hideManifest ? "hidden" : "text", name: "manifest", value: JSON.stringify(manifest) }));
-  form.appendChild(createElement("input", { type: "submit" });
+  form.appendChild(createElement("input", { type: "submit" }));
   return form;
 }
 
