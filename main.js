@@ -31,7 +31,7 @@ const initiate = ({organization, manifest, hideManifest}) => {
   document.body.appendChild(renderForm(appUrl, manifest, hideManifest));
 }
 
-document.addEventListener("load", () => {
+document.body.addEventListener("load", () => {
   const CONFIG = queryParams("manifest", "organization", "state", "hideManifest");
   if (!CONFIG["state"]) {
     initiate(CONFIG);
