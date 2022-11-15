@@ -35,9 +35,8 @@ const overrideManifestRedirect = (manifest) => ({
 const initiate = ({organization, manifest, hideManifest}) => {
   try {
 		const manifestObj = !!manifest && manifest.length > 0 ? JSON.parse(manifest) : {};
-		const manifestString = JSON.stringify(overrideManifestRedirect(manifestObj));
   	const appUrl = getAppUrl(organization);
-  	document.body.appendChild(renderForm(appUrl, manifestString, hideManifest));
+  	document.body.appendChild(renderForm(appUrl, overrideManifestRedirect(manifestObj), hideManifest));
 	} catch (e) {
 		const div = createElement("div");
 		div.innerText = `ERROR: ${e}`;
