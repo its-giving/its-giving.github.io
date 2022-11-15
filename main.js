@@ -34,8 +34,8 @@ const overrideManifestRedirect = (manifest) => ({
 
 const initiate = ({organization, manifest, hideManifest}) => {
   try {
-		const manifestObj = !!manifest && manifest.length > 0 ? JSON.parse(manifestObj) : {};
-		const manifestString = JSON.stringify(overrideManifestRedirect(manifest));
+		const manifestObj = !!manifest && manifest.length > 0 ? JSON.parse(manifest) : {};
+		const manifestString = JSON.stringify(overrideManifestRedirect(manifestObj));
   	const appUrl = getAppUrl(organization);
   	document.body.appendChild(renderForm(appUrl, manifestString, hideManifest));
 	} catch (e) {
