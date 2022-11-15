@@ -13,7 +13,7 @@ const getRegistrationUrl = code => `https://api.github.com/app-manifests/${code}
 /* DOM UTILS */
 const createElement = (tag, attributes) => {
   const el = document.createElement(tag);
-  for (const [k, v] of Object.entries(attributes)) {
+  for (const [k, v] of Object.entries(attributes || {})) {
     el.setAttribute(k, v);
   }
   return el;
